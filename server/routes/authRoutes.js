@@ -5,6 +5,7 @@ const {
   test,
   registerUser,
   loginUser,
+  getProfile,
 } = require("../controllers/authController");
 
 const clientUrl = process.env.CLIENT_URL;
@@ -20,5 +21,6 @@ router.use(
 router.get("/", test);
 router.post("/register", registerUser);
 router.post("/login", loginUser);
+router.get("/profile", getProfile);
 
 module.exports = router;

@@ -22,7 +22,7 @@ export default function Login() {
         toast.error(data.error);
       } else {
         setData({}); //reset form
-        navigate("/"); //navigate to home page
+        navigate("/dashboard"); //navigate to home page
       }
     } catch (error) {}
   };
