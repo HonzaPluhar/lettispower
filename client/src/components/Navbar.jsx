@@ -9,8 +9,7 @@ export default function NavBar() {
       <Link to="/">Home</Link>
       {!user && <Link to="/register">Register</Link>}
       {!user && <Link to="/login">Login</Link>}
-      {!!user && <Link to="/profile">Profile</Link>}
-      {!!user && <Link to="/logout">Logout</Link>}
+
       {!!user && <Link to="/dashboard">Dashboard</Link>}
     </nav>
   );

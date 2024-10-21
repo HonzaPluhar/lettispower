@@ -11,9 +11,10 @@ export default function Dashboard() {
   const logout = async () => {
     try {
       const response = await axios.get("/logout");
+
       if (response.ok) {
         toast.success("Logged out successfully");
-        navigate("/login");
+        navigate("/login"); //navigate to loginpage
       } else {
         toast.error("Something went wrong");
       }
@@ -38,16 +39,15 @@ export default function Dashboard() {
       {user && (
         <div>
           <h1>Dashboard</h1>
-          {!!user && <h2>hI {user.name}!</h2>}
+          <h2>Welcome back {user.name}!</h2>
           <div>
             <p>Dashboard content goes here...</p>
+            <p>There will be some super duper technology</p>
           </div>
 
-          {!!user && (
-            <form onSubmit={logout}>
-              <button type="submit">Logout</button>
-            </form>
-          )}
+          <form onSubmit={logout}>
+            <button type="submit">Logout</button>
+          </form>
         </div>
       )}
     </>

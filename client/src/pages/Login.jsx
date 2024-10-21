@@ -23,6 +23,9 @@ export default function Login() {
       } else {
         setData({}); //reset form
         navigate("/dashboard"); //navigate to home page
+        //refresh the page
+        window.location.reload();
+        toast.success("Login successful");
       }
     } catch (error) {}
   };
