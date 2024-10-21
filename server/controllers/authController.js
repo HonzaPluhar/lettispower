@@ -88,9 +88,18 @@ const getProfile = (req, res) => {
   }
 };
 
+const logOut = (req, res) => {
+  try {
+    res.clearCookie("token").json({ message: "Signout success" });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   test,
   registerUser,
   loginUser,
   getProfile,
+  logOut,
 };
