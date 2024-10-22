@@ -30,7 +30,13 @@ const registerUser = async (req, res) => {
     //Hash password
     const hashedPassword = await hashPassword(password);
     //Create user in database
-    const user = await User.create({ name, email, password: hashedPassword });
+    const user = await User.create({
+      name,
+      email,
+      password: hashedPassword,
+      role: "Client",
+      created_at: new Date(),
+    });
 
     return res.json(user);
   } catch (error) {

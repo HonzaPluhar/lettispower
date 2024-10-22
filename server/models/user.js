@@ -9,6 +9,14 @@ const userSchema = new Schema({
     unique: true,
   },
   password: String,
+  role: {
+    type: String,
+    default: "Client",
+  },
+  created_at: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const UserModel = mongoose.model("User", userSchema);
