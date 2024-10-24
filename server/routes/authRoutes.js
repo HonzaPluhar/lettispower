@@ -29,6 +29,6 @@ router.get("/profile", getProfile);
 router.get("/logout", logOut);
 
 //other routes
-router.post("/message", createMessage);
+router.post("/createmessage", createMessage);
 
 module.exports = router;

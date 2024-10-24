@@ -11,7 +11,10 @@ export default function Messages() {
     e.preventDefault();
     const { recipient, message } = data;
     try {
-      const { data } = await axios.post("/message", { recipient, message });
+      const { data } = await axios.post("/createmessage", {
+        recipient,
+        message,
+      });
       if (data.error) {
         toast.error(data.error);
       } else {
@@ -29,8 +32,8 @@ export default function Messages() {
         <form onSubmit={createMessage}>
           <label>Recipient</label>
           <input
-            type="text"
-            placeholder="enter recipient..."
+            type="email"
+            placeholder="enter recipient email..."
             value={data.recipient}
             onChange={(e) => setData({ ...data, recipient: e.target.value })}
           />
