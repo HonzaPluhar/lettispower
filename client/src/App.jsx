@@ -1,4 +1,4 @@
-import "./App.css";
+import "./index.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -17,14 +17,16 @@ function App() {
   return (
     <UserContextProvider>
       <Navbar />
-      <Toaster position="bottom-right" toastOptions={{ duration: 4000 }} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/messages" element={<Messages />} />
-      </Routes>
+      <div className="container px-4 pt-48 pb-12 min-h-screen max-w-xl mx-auto md:max-w-4xl">
+        <Toaster position="bottom-right" toastOptions={{ duration: 4000 }} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/messages" element={<Messages />} />
+        </Routes>
+      </div>
     </UserContextProvider>
   );
 }
