@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DashboardNavBar from "../components/DashboardNavBar";
+import { PiWarningDuotone } from "react-icons/pi";
 
 export default function Dashboard() {
   const { user } = useContext(UserContext);
@@ -28,7 +29,8 @@ export default function Dashboard() {
     <>
       {/* When no user logged in */}
       {!user && (
-        <div>
+        <div className="flex flex-col items-center pt-8">
+          <PiWarningDuotone size={50} className="text-secondarycolor" />
           <h2>Please Login</h2>
           <p>You need to login to access this page</p>
         </div>
@@ -39,20 +41,23 @@ export default function Dashboard() {
 
       {user && (
         <>
+          <div className="justify-between w-full flex pb-12 gap-8 items-center">
+            <h2>Welcome back {user.name}!</h2>
+            <form onSubmit={logout}>
+              <button type="submit" className="btn2">
+                Logout
+              </button>
+            </form>
+          </div>
+
           <DashboardNavBar />
           <div>
             <h1>Dashboard</h1>
-            <h2>Welcome back {user.name}!</h2>
+
             <div>
               <p>Dashboard content goes here...</p>
               <p>There will be some super duper technology</p>
             </div>
-
-            <form onSubmit={logout}>
-              <button type="submit" className="btn1">
-                Logout
-              </button>
-            </form>
           </div>
         </>
       )}

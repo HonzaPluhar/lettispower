@@ -29,7 +29,7 @@ export default function Messages() {
   return (
     <>
       <div>
-        <form onSubmit={createMessage}>
+        <form onSubmit={createMessage} className="form1">
           <label>Recipient</label>
           <input
             type="email"
@@ -39,6 +39,8 @@ export default function Messages() {
           />
           <label>Message</label>
           <input
+            //textarea
+            id="message"
             type="text"
             placeholder="enter message..."
             value={data.message}

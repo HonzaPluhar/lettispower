@@ -32,8 +32,9 @@ export default function Login() {
 
   return (
     <>
-      <div>
-        <form onSubmit={loginUser}>
+      <div className="mt-16">
+        <form onSubmit={loginUser} className="form1">
+          <h1>Login</h1>
           <label>Email</label>
           <input
             type="email"
@@ -48,7 +49,9 @@ export default function Login() {
             value={data.password}
             onChange={(e) => setData({ ...data, password: e.target.value })}
           />
-          <button type="submit">Login</button>
+          <button type="submit" className="btn1">
+            Login
+          </button>
         </form>
       </div>
     </>

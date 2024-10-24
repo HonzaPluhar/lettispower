@@ -30,8 +30,9 @@ export default function Register() {
 
   return (
     <>
-      <div>
-        <form onSubmit={registerUser}>
+      <div className="mt-16">
+        <form onSubmit={registerUser} className="form1">
+          <h1>Register</h1>
           <label>Name</label>
           <input
             type="text"
@@ -53,7 +54,9 @@ export default function Register() {
             value={data.password}
             onChange={(e) => setData({ ...data, password: e.target.value })}
           />
-          <button type="submit">Submit</button>
+          <button type="submit" className="btn1">
+            Submit
+          </button>
         </form>
       </div>
     </>

@@ -17,7 +17,7 @@ function App() {
   return (
     <UserContextProvider>
       <Navbar />
-      <div className="container px-4 pt-48 pb-12 min-h-screen max-w-xl mx-auto md:max-w-3xl">
+      <div className="container px-4 pt-12 pb-12 min-h-screen max-w-xl mx-auto md:max-w-3xl">
         <Toaster position="bottom-right" toastOptions={{ duration: 4000 }} />
         <Routes>
           <Route path="/" element={<Home />} />
