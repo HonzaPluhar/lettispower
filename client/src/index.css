@@ -20,6 +20,10 @@ a {
   color: #00a9dd;
 }
 
+a:hover {
+  color: #00a9dd;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -46,4 +50,25 @@ a {
 .links a {
   color: #f0f0f0;
   font-weight: 600;
+  transition: all 0.3s;
+}
+
+.links a:hover {
+  color: #00a9dd;
+}
+
+.btn1 {
+  background-color: #002b39;
+  color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn1:hover {
+  background-color: #00475e;
+  scale: 1.05;
 }

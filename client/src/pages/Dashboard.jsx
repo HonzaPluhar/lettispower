@@ -49,7 +49,9 @@ export default function Dashboard() {
             </div>
 
             <form onSubmit={logout}>
-              <button type="submit">Logout</button>
+              <button type="submit" className="btn1">
+                Logout
+              </button>
             </form>
           </div>
         </>
