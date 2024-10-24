@@ -3,6 +3,7 @@ import { UserContext } from "../../context/userContext";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import DashboardNavBar from "../components/DashboardNavBar";
 
 export default function Dashboard() {
   const { user } = useContext(UserContext);
@@ -38,6 +39,7 @@ export default function Dashboard() {
 
       {user && (
         <>
+          <DashboardNavBar />
           <div>
             <h1>Dashboard</h1>
             <h2>Welcome back {user.name}!</h2>

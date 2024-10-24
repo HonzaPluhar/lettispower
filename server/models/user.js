@@ -13,6 +13,12 @@ const userSchema = new Schema({
     type: String,
     default: "Client",
   },
+  inbox: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Message",
+    },
+  ],
   created_at: {
     type: Date,
     default: Date.now,

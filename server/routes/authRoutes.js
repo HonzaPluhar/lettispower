@@ -9,6 +9,9 @@ const {
   logOut,
 } = require("../controllers/authController");
 
+//other controllers
+const { createMessage } = require("../controllers/messageController");
+
 const clientUrl = process.env.CLIENT_URL;
 
 // middleware
@@ -24,5 +27,8 @@ router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/profile", getProfile);
 router.get("/logout", logOut);
+
+//other routes
+router.post("/message", createMessage);
 
 module.exports = router;
