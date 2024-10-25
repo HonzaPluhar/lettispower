@@ -1,3 +1,4 @@
+const { get } = require("mongoose");
 const Message = require("../models/message");
 const User = require("../models/user");
 
@@ -29,9 +30,17 @@ const createMessage = async (req, res) => {
   }
 };
 
-// Get all messages from a user
+// get all messages
+const getMessages = async (req, res) => {
+  try {
+    const messages = await Message.find();
+    res.json(messages);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 module.exports = {
   createMessage,
-  // getMessages,
+  getMessages,
 };

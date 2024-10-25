@@ -35,6 +35,7 @@ const registerUser = async (req, res) => {
       email,
       password: hashedPassword,
       role: "Client",
+      inbox: [],
       created_at: new Date(),
     });
 
@@ -63,7 +64,13 @@ const loginUser = async (req, res) => {
     if (match) {
       //JWT
       jwt.sign(
-        { email: user.email, id: user._id, name: user.name },
+        {
+          email: user.email,
+          id: user._id,
+          name: user.name,
+          role: user.role,
+          inbox: user.inbox,
+        },
         process.env.JWT_SECRET,
         {},
         (err, token) => {

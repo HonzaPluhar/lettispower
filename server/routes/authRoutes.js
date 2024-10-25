@@ -10,7 +10,10 @@ const {
 } = require("../controllers/authController");
 
 //other controllers
-const { createMessage } = require("../controllers/messageController");
+const {
+  createMessage,
+  getMessages,
+} = require("../controllers/messageController");
 
 const clientUrl = process.env.CLIENT_URL;
 
@@ -30,5 +33,6 @@ router.get("/logout", logOut);
 
 //other routes
 router.post("/createmessage", createMessage);
+router.get("/getmessages", getMessages);
 
 module.exports = router;

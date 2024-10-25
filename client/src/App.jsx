@@ -8,7 +8,8 @@ import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import { UserContextProvider } from "../context/userContext";
 import Dashboard from "./pages/Dashboard";
-import Messages from "./pages/Messages";
+import CreateMessage from "./pages/CreateMessage";
+import Inbox from "./pages/Inbox";
 
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
@@ -24,7 +25,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/messages" element={<Messages />} />
+          <Route path="/createmessage" element={<CreateMessage />} />
+          <Route path="/inbox" element={<Inbox />} />
         </Routes>
       </div>
     </UserContextProvider>
