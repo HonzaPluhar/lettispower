@@ -9,18 +9,19 @@ export default function Inbox() {
   const { user } = useContext(UserContext);
 
   const displayMessages = async () => {
-    const res = await axios.get("/getmessages");
-    console.log("Displaying messages by their id"); // !!!!   this should be commented out
-    console.log(res.data); // !!!!   this should be commented out
+    try {
+      const res = await axios.get("/getmessages");
+      console.log("Displaying messages by their id"); // !!!!   this should be commented out
+      console.log(res.data); // !!!!   this should be commented out
 
-    //if user email is == to the recipient of the message
-    // then display the message
-    const messagescontainer = document.getElementById("messagescontainer");
-    messagescontainer.innerHTML = "";
-    res.data.forEach((message) => {
-      if (message.recipient === user.email) {
-        const messageDiv = document.createElement("div");
-        messageDiv.innerHTML = `
+      //if user email is == to the recipient of the message
+      // then display the message
+      const messagescontainer = document.getElementById("messagescontainer");
+      messagescontainer.innerHTML = "";
+      res.data.forEach((message) => {
+        if (message.recipient === user.email) {
+          const messageDiv = document.createElement("div");
+          messageDiv.innerHTML = `
        
           <div>
             <h3>${message.created_at}</h3>
@@ -28,12 +29,14 @@ export default function Inbox() {
           </div>
          
         `;
-        messagescontainer.appendChild(messageDiv);
-      }
-    });
+          messagescontainer.appendChild(messageDiv);
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  //call the displayMessages function on page load
   displayMessages();
 
   return (
