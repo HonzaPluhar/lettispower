@@ -4,6 +4,7 @@ import { UserContext } from "../../context/UserContext";
 import DashboardNavBar from "../components/DashboardNavBar";
 import { PiWarningDuotone } from "react-icons/pi";
 import axios from "axios";
+import "../pages/inbox.css";
 
 export default function Inbox() {
   const { user } = useContext(UserContext);
@@ -11,6 +12,9 @@ export default function Inbox() {
   const displayMessages = async () => {
     try {
       const res = await axios.get("/getmessages");
+      //reverse the array to display the latest message first
+      res.data.reverse();
+
       console.log("Displaying messages by their id"); // !!!!   this should be commented out
       console.log(res.data); // !!!!   this should be commented out
 
@@ -23,9 +27,11 @@ export default function Inbox() {
           const messageDiv = document.createElement("div");
           messageDiv.innerHTML = `
        
-          <div>
-            <h3>${message.created_at}</h3>
-            <p>${message.message}</p>
+          <div class="messagesWindow">
+          <div class="messagesCard">
+            <h3 class="messagesDate">${message.created_at}</h3>
+            <p class="messagesText">${message.message}</p>
+            </div>
           </div>
          
         `;
@@ -57,14 +63,17 @@ export default function Inbox() {
         <>
           <DashboardNavBar />
           <div>
-            <h1>Inbox</h1>
-            <button onClick={displayMessages} className="btn1">
+            <h1 className="text-center text-2xl font-bold">
+              Notifications from Admin
+            </h1>
+            <button
+              onClick={displayMessages}
+              className="btn2 flex justify-center items-center m-auto py-2 px-4 mt-4 mb-12"
+            >
               Refresh
             </button>
 
-            <div className="">
-              <div id="messagescontainer"></div>
-            </div>
+            <div id="messagescontainer"></div>
           </div>
         </>
       )}

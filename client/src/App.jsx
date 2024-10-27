@@ -10,6 +10,7 @@ import { UserContextProvider } from "../context/userContext";
 import Dashboard from "./pages/Dashboard";
 import CreateMessage from "./pages/CreateMessage";
 import Inbox from "./pages/Inbox";
+import Services from "./pages/Services";
 
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
@@ -27,6 +28,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/createmessage" element={<CreateMessage />} />
           <Route path="/inbox" element={<Inbox />} />
+          <Route path="/services" element={<Services />} />
         </Routes>
       </div>
     </UserContextProvider>

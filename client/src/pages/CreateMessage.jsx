@@ -67,8 +67,7 @@ export default function CreateMessage() {
                     }
                   />
                   <label>Message</label>
-                  <input
-                    //textarea
+                  <textarea
                     id="message"
                     type="text"
                     placeholder="enter message..."
@@ -77,9 +76,15 @@ export default function CreateMessage() {
                       setData({ ...data, message: e.target.value })
                     }
                   />
-                  <button type="submit">Submit</button>
+                  <button type="submit" className="btn1">
+                    Submit
+                  </button>
                 </form>
               </div>
+              <p className="text-center pt-6 text-gray-400 font-normal">
+                Available classes for formatting the text:{" "}
+                <p> .textRed .textBlue .textGreen .textBold</p>
+              </p>
             </div>
           </>
         )}

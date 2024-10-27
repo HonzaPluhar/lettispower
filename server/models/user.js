@@ -19,9 +19,41 @@ const userSchema = new Schema({
       ref: "Message",
     },
   ],
+  projects: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Project",
+    },
+  ],
+
   created_at: {
     type: Date,
     default: Date.now,
+  },
+
+  service1: {
+    type: Boolean,
+    default: false,
+  },
+
+  service2: {
+    type: Boolean,
+    default: false,
+  },
+
+  service3: {
+    type: Boolean,
+    default: false,
+  },
+
+  service4: {
+    type: Boolean,
+    default: false,
+  },
+
+  service5: {
+    type: Boolean,
+    default: false,
   },
 });
 

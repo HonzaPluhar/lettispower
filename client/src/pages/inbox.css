@@ -1,0 +1,46 @@
+.messagesWindow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+}
+
+.messagesCard {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.messagesDate {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+
+.messagesText {
+  font-size: 1rem;
+  color: #333;
+}
+
+.textRed {
+  color: red;
+}
+
+.textGreen {
+  color: green;
+}
+
+.textBlue {
+  color: blue;
+}
+
+.textBold {
+  font-weight: bold;
+}
