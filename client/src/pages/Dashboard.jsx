@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import DashboardNavBar from "../components/DashboardNavBar";
 import { PiWarningDuotone } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   const { user } = useContext(UserContext);
@@ -14,7 +15,9 @@ export default function Dashboard() {
         <div className="flex flex-col items-center pt-8">
           <PiWarningDuotone size={50} className="text-secondarycolor" />
           <h2>Please Login</h2>
-          <p>You need to login to access this page</p>
+          <p>
+            You need to <Link to="/login">login</Link> to access this page
+          </p>
         </div>
       )}
 

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { UserContext } from "../../context/userContext";
 import DashboardNavBar from "../components/DashboardNavBar";
 import { PiWarningDuotone } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 export default function Services() {
   const { user } = useContext(UserContext);
@@ -13,7 +14,9 @@ export default function Services() {
         <div className="flex flex-col items-center pt-8">
           <PiWarningDuotone size={50} className="text-secondarycolor" />
           <h2>Please Login</h2>
-          <p>You need to login to access this page</p>
+          <p>
+            You need to <Link to="/login">login</Link> to access this page
+          </p>
         </div>
       )}
 
@@ -35,7 +38,7 @@ export default function Services() {
                     <p className="text-gray-700 text-lg leading-relaxed">
                       Subscription{" "}
                       <span className="text-gray-500 font-normal text-sm">
-                        (monthly)
+                        <br /> (1.499,- czk/monthly)
                       </span>
                     </p>
                   </div>
@@ -62,7 +65,7 @@ export default function Services() {
                     <p className="text-gray-700 text-lg leading-relaxed">
                       Backup to local and cloud storage{" "}
                       <span className="text-gray-500 font-normal text-sm">
-                        (monthly)
+                        <br /> (499,- czk/monthly)
                       </span>
                     </p>
                   </div>
@@ -89,7 +92,7 @@ export default function Services() {
                     <p className="text-gray-700 text-lg leading-relaxed">
                       Updates and maintenance{" "}
                       <span className="text-gray-500 font-normal text-sm">
-                        (monthly)
+                        <br /> (1.499,- czk/monthly)
                       </span>
                     </p>
                   </div>

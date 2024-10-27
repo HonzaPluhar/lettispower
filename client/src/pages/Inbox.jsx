@@ -5,18 +5,20 @@ import DashboardNavBar from "../components/DashboardNavBar";
 import { PiWarningDuotone } from "react-icons/pi";
 import axios from "axios";
 import "../pages/inbox.css";
+import { Link } from "react-router-dom";
 
 export default function Inbox() {
   const { user } = useContext(UserContext);
 
   const displayMessages = async () => {
+    if (!user) return;
     try {
       const res = await axios.get("/getmessages");
       //reverse the array to display the latest message first
       res.data.reverse();
 
-      console.log("Displaying messages by their id"); // !!!!   this should be commented out
-      console.log(res.data); // !!!!   this should be commented out
+      // console.log("Displaying messages by their id"); // !!!!   this should be commented out
+      // console.log(res.data); // !!!!   this should be commented out
 
       //if user email is == to the recipient of the message
       // then display the message
@@ -52,7 +54,9 @@ export default function Inbox() {
         <div className="flex flex-col items-center pt-8">
           <PiWarningDuotone size={50} className="text-secondarycolor" />
           <h2>Please Login</h2>
-          <p>You need to login to access this page</p>
+          <p>
+            You need to <Link to="/login">login</Link> to access this page
+          </p>
         </div>
       )}
 

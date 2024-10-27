@@ -2,9 +2,10 @@ import { React, useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import DashboardNavBar from "../components/DashboardNavBar";
-import { PiWarningDuotone } from "react-icons/pi";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { PiWarningDuotone } from "react-icons/pi";
 
 export default function CreateMessage() {
   const { user } = useContext(UserContext);
@@ -43,7 +44,9 @@ export default function CreateMessage() {
           <div className="flex flex-col items-center pt-8">
             <PiWarningDuotone size={50} className="text-secondarycolor" />
             <h2>Please Login</h2>
-            <p>You need to login to access this page</p>
+            <p>
+              You need to <Link to="/login">login</Link> to access this page
+            </p>
           </div>
         )}
 
@@ -83,7 +86,7 @@ export default function CreateMessage() {
               </div>
               <p className="text-center pt-6 text-gray-400 font-normal">
                 Available classes for formatting the text:{" "}
-                <p> .textRed .textBlue .textGreen .textBold</p>
+                <span> .textRed .textBlue .textGreen .textBold</span>
               </p>
             </div>
           </>
