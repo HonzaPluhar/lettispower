@@ -1,6 +1,5 @@
-import React from "react";
-import { useContext } from "react";
-import { UserContext } from "../../context/userContext";
+import React, { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import DashboardNavBar from "../components/DashboardNavBar";
 import { PiWarningDuotone } from "react-icons/pi";
 import { Link } from "react-router-dom";
