@@ -117,7 +117,9 @@ const getProfile = (req, res) => {
 
 const logOut = (req, res) => {
   try {
-    res.clearCookie("token").json("Logged out");
+    res
+      .clearCookie("token", { sameSite: "None", secure: true })
+      .json("Logged out");
   } catch (error) {
     console.log(error);
   }
