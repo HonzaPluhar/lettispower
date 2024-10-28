@@ -6,6 +6,14 @@ const cookieParser = require("cookie-parser");
 
 const app = express();
 
+// Nastavení CORS - povolí přístup z konkrétního původu
+app.use(
+  cors({
+    origin: "https://reactapp-janpluharweb-development.onrender.com", // Sem zadej URL frontendu
+    credentials: true, // Pokud pracuješ s cookies
+  })
+);
+
 // Connect to MongoDB
 Mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
