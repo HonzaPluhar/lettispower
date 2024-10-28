@@ -24,7 +24,7 @@ export default function Login() {
         setData({}); //reset form
         navigate("/dashboard"); //navigate to home page
         //refresh the page
-        window.location.reload();
+        // window.location.reload();
         toast.success("Login successful");
       }
     } catch (error) {}
