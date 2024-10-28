@@ -14,8 +14,7 @@ import Services from "./pages/Services";
 import CreateProject from "./pages/CreateProject";
 import Projects from "./pages/Projects";
 
-axios.defaults.baseURL =
-  "https://reactapp-janpluharweb-development.onrender.com";
+axios.defaults.baseURL = "https://janpluharcz-backend-dev.onrender.com";
 axios.defaults.withCredentials = true;
 
 function App() {
