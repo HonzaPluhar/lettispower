@@ -22,9 +22,10 @@ export default function Login() {
         toast.error(data.error);
       } else {
         setData({}); //reset form
-        navigate("/dashboard"); //navigate to home page
+
         //refresh the page
-        // window.location.reload();
+        window.location.reload();
+        navigate("/dashboard"); //navigate to home page
         toast.success("Login successful");
       }
     } catch (error) {}

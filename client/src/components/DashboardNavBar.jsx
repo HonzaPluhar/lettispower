@@ -21,7 +21,7 @@ export default function DashboardNavBar() {
 
   const logout = async () => {
     try {
-      const response = await axios.get("/logout");
+      const response = await axios.post("/logout");
 
       if (response.ok) {
         toast.success("Logged out successfully");

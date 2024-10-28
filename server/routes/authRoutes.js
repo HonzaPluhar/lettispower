@@ -36,7 +36,7 @@ router.get("/", test);
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/profile", getProfile);
-router.get("/logout", logOut);
+router.post("/logout", logOut);
 
 //message routes
 router.post("/createmessage", createMessage);
