@@ -63,34 +63,43 @@ export default function DashboardNavBar() {
             <PiArchiveDuotone size={25} className="m-auto" />
             <p className="hidden md:block">Inbox</p>
           </Link>
-          <Link
-            to="/createmessage"
-            className="text-secondarycolor hover:fill-maincolor ease-in duration-100"
-          >
-            <PiChatCenteredDotsDuotone size={25} className="m-auto " />
-            <p className="hidden md:block">Create Message</p>
-          </Link>
-          <Link
-            to="/services"
-            className="text-secondarycolor hover:fill-maincolor ease-in duration-100"
-          >
-            <PiBugDroidDuotone size={25} className="m-auto " />
-            <p className="hidden md:block">Services</p>
-          </Link>
-          <Link
-            to="/projects"
-            className="text-secondarycolor hover:fill-maincolor ease-in duration-100"
-          >
-            <PiBriefcaseDuotone size={25} className="m-auto " />
-            <p className="hidden md:block">Projects</p>
-          </Link>
-          <Link
-            to="/createproject"
-            className="text-secondarycolor hover:fill-maincolor ease-in duration-100"
-          >
-            <PiAppWindowDuotone size={25} className="m-auto " />
-            <p className="hidden md:block">New Project</p>
-          </Link>
+
+          {user.role === "Admin" && (
+            <Link
+              to="/createmessage"
+              className="text-secondarycolor hover:fill-maincolor ease-in duration-100"
+            >
+              <PiChatCenteredDotsDuotone size={25} className="m-auto " />
+              <p className="hidden md:block">Create Message</p>
+            </Link>
+          )}
+          {user.role === "Client" && (
+            <Link
+              to="/services"
+              className="text-secondarycolor hover:fill-maincolor ease-in duration-100"
+            >
+              <PiBugDroidDuotone size={25} className="m-auto " />
+              <p className="hidden md:block">Services</p>
+            </Link>
+          )}
+          {user.role === "Client" && (
+            <Link
+              to="/projects"
+              className="text-secondarycolor hover:fill-maincolor ease-in duration-100"
+            >
+              <PiBriefcaseDuotone size={25} className="m-auto " />
+              <p className="hidden md:block">Projects</p>
+            </Link>
+          )}
+          {user.role === "Admin" && (
+            <Link
+              to="/createproject"
+              className="text-secondarycolor hover:fill-maincolor ease-in duration-100"
+            >
+              <PiAppWindowDuotone size={25} className="m-auto " />
+              <p className="hidden md:block">New Project</p>
+            </Link>
+          )}
         </nav>
       </div>
     </>
