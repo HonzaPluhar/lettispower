@@ -2,7 +2,7 @@ import { React, useState, useContext } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import DashboardNavBar from "../components/DashboardNavBar";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../context/userContext";
 
 import { Link } from "react-router-dom";
 import { PiWarningDuotone } from "react-icons/pi";

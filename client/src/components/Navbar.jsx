@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { UserContext } from "../../context/userContext";
+import { UserContext } from "../context/userContext";
 import { PiListBold } from "react-icons/pi";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 

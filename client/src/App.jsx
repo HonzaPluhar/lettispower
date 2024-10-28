@@ -6,7 +6,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
-import { UserContextProvider } from "../context/userContext";
+import { UserContextProvider } from "./context/userContext";
 import Dashboard from "./pages/Dashboard";
 import CreateMessage from "./pages/CreateMessage";
 import Inbox from "./pages/Inbox";
@@ -14,7 +14,8 @@ import Services from "./pages/Services";
 import CreateProject from "./pages/CreateProject";
 import Projects from "./pages/Projects";
 
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL =
+  "https://reactapp-janpluharweb-development.onrender.com";
 axios.defaults.withCredentials = true;
 
 function App() {
