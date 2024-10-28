@@ -9,7 +9,7 @@ const app = express();
 // Nastavení CORS - povolí přístup z konkrétního původu
 app.use(
   cors({
-    origin: "https://reactapp-janpluharweb-development.onrender.com", // Sem zadej URL frontendu
+    origin: process.env.CLIENT_URL,
     credentials: true, // Pokud pracuješ s cookies
   })
 );
