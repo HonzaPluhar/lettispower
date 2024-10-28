@@ -9,11 +9,17 @@ const {
   logOut,
 } = require("../controllers/authController");
 
-//other controllers
+//message controllers
 const {
   createMessage,
   getMessages,
 } = require("../controllers/messageController");
+
+//project controllers
+const {
+  createProject,
+  getProjects,
+} = require("../controllers/projectsController");
 
 const clientUrl = process.env.CLIENT_URL;
 
@@ -25,14 +31,19 @@ router.use(
   })
 );
 
+//auth routes
 router.get("/", test);
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/profile", getProfile);
 router.get("/logout", logOut);
 
-//other routes
+//message routes
 router.post("/createmessage", createMessage);
 router.get("/getmessages", getMessages);
+
+//project routes
+router.post("/createproject", createProject);
+router.get("/getprojects", getProjects);
 
 module.exports = router;

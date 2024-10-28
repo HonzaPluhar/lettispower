@@ -1,0 +1,116 @@
+.projectWindow {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f9fafb;
+}
+
+.projectCard {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.projectTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.projectDescription {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.projectSliderProgression {
+  width: 100%;
+  height: 10px;
+  background-color: #e4e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.projectSliderFill {
+  height: 100%;
+  background-color: #4bc74f;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+  width: 0;
+}
+
+.projectTrackTimeUrl,
+.projectDownloadUrl {
+  font-size: 0.85rem;
+  color: #1e90ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.status-waiting {
+  color: #d97706;
+  background-color: #fef3c7;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  margin-left: auto;
+}
+
+.status-in-progress {
+  color: #2563eb;
+  background-color: #dbeafe;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  margin-left: auto;
+}
+
+.status-finished {
+  color: #16a34a;
+  background-color: #d1fae5;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  margin-left: auto;
+}
+
+.status-cancelled {
+  color: #dc2626;
+  background-color: #fee2e2;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  margin-left: auto;
+}

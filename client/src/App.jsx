@@ -11,6 +11,8 @@ import Dashboard from "./pages/Dashboard";
 import CreateMessage from "./pages/CreateMessage";
 import Inbox from "./pages/Inbox";
 import Services from "./pages/Services";
+import CreateProject from "./pages/CreateProject";
+import Projects from "./pages/Projects";
 
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
@@ -29,6 +31,8 @@ function App() {
           <Route path="/createmessage" element={<CreateMessage />} />
           <Route path="/inbox" element={<Inbox />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/createproject" element={<CreateProject />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
       </div>
     </UserContextProvider>

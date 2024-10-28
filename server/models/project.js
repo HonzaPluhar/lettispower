@@ -7,7 +7,7 @@ function formatDate(date) {
 }
 
 const projectSchema = new Schema({
-  name: {
+  title: {
     type: String,
     required: true,
   },
@@ -23,6 +23,14 @@ const projectSchema = new Schema({
   },
   trackTimeUrl: String,
   downloadUrl: String,
+  assignedTo: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
+  projectOwner: {
+    type: String,
+    required: true,
+  },
 
   created_at: {
     type: Date,

@@ -11,6 +11,7 @@ import {
   PiChatCenteredDotsDuotone,
   PiBugDroidDuotone,
   PiBriefcaseDuotone,
+  PiAppWindowDuotone,
 } from "react-icons/pi";
 
 export default function DashboardNavBar() {
@@ -77,11 +78,18 @@ export default function DashboardNavBar() {
             <p className="hidden md:block">Services</p>
           </Link>
           <Link
-            to="#"
+            to="/projects"
             className="text-secondarycolor hover:fill-maincolor ease-in duration-100"
           >
             <PiBriefcaseDuotone size={25} className="m-auto " />
             <p className="hidden md:block">Projects</p>
+          </Link>
+          <Link
+            to="/createproject"
+            className="text-secondarycolor hover:fill-maincolor ease-in duration-100"
+          >
+            <PiAppWindowDuotone size={25} className="m-auto " />
+            <p className="hidden md:block">New Project</p>
           </Link>
         </nav>
       </div>
